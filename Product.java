@@ -7,7 +7,6 @@ public class Product {
     int promotion;
     int employee_id;
     char size; 
-    String description;
 // Constructor TO ADD product to order
     public Product(String name, String category, double price, char size) {
         this.name = name;
