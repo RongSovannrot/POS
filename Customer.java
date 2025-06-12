@@ -5,8 +5,6 @@ public class Customer {
     String address;
     String registerDATE;
     String dob;
-    String password;
-    String email;
     int loyalty_points;
 
     public Customer(String userName, char gender, String phoneNumber, String address, String registerDATE, String password,) {
