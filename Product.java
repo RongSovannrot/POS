@@ -11,9 +11,9 @@ public class Product {
     private boolean stock; //available, unavailable
     private Date importDate;
     private Date outStockDate;
-    private int sellOutDuration; //sell out in X days
+    private int sellOutDuration; //sell out in x days
 
-    //Cons for new product
+    //cons for new product
     public Product(int productId, String p_name, String category, double price, char size, int stock, int quantity, double promotionDiscount) {
         this.productId = productId;
         this.p_name = p_name;
@@ -26,7 +26,7 @@ public class Product {
         this.importDate = new Date(); 
     }
 
-    //Cons for orders
+    //cons for orders
     public Product(String p_name, String category, double price, double promotionDiscount, char size, boolean stock) { 
         this.p_name = p_name;
         this.category = category;
@@ -37,7 +37,7 @@ public class Product {
         this.importDate = new Date();
     }
 
-    //Cons for reporting product
+    //cons for reporting product
     public Product(String p_name, String category, char size, double price, int sellOutDuration) { 
         this.p_name = p_name;
         this.category = category;
