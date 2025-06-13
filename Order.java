@@ -1,23 +1,63 @@
-public import java.util.Date;
+import java.util.Date;
+
 public class Order {
-    int orderId;
-    Customer customer;
-    double quantity;
-    String status; // e.g., "Pending", "Shipped"
-    Date orderTime;
-    int total_price;
-    int employee_id;
-    String product_review;
-    int product_id;
+    private int orderId;
+    private Customer customer;
+    private Product product;
+    private int quantity;
+    private String status; // Pending, Completed
+    private Date orderTime;
+    private int employeeId;
+    private String productReview;
 
-
-    public Order(int orderId, Customer customer, double quantity, String status, Date orderTime,int employee_id,int total_price) {
+    //cons
+    public Order(int orderId, Customer customer, Product product, int quantity, String status, int employeeId) {
         this.orderId = orderId;
         this.customer = customer;
+        this.product = product;
         this.quantity = quantity;
         this.status = status;
-        this.orderTime = orderTime;
-        this.employee_id = employee_id;
-        this.total_price = total_price
+        this.orderTime = new Date();
+        this.employeeId = employeeId;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Date getOrderTime() {
+        return orderTime;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getProductReview() {
+        return productReview;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setProductReview(String review) {
+        this.productReview = review;
     }
 }
