@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 import java.sql.Date;
+=======
+public class Customer {
+    String userName;
+    char gender; // M or F
+    String phoneNumber;
+    String address;
+    String registerDATE;
+    String dob;
+    int loyalty_points;
+>>>>>>> 75bf279625213463b28136f945920f146e23d249
 
 public class Customer {
     private String userName;
