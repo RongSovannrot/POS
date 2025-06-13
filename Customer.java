@@ -1,10 +1,12 @@
+import java.sql.Date;
+
 public class Customer {
     private String userName;
     private char gender; // M or F
     private String phoneNumber;
     private String address;
     private String registerDate;
-    private String dob;
+    private Date dob;
     private int loyaltyPoints;
     private String password;
 
@@ -40,7 +42,7 @@ public class Customer {
         return registerDate;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
