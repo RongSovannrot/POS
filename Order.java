@@ -7,10 +7,10 @@ public class Order {
     private int quantity;
     private String status; // Pending, Completed
     private Date orderTime;
+    private int productReview; //rate from 1 to 5
     private int employeeId;
-    private String productReview;
 
-    //cons
+    //cons for ordering
     public Order(int orderId, Customer customer, Product product, int quantity, String status, int employeeId) {
         this.orderId = orderId;
         this.customer = customer;
@@ -25,20 +25,16 @@ public class Order {
         return orderId;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public Product getProduct() {
         return product;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public String getStatus() {
-        return status;
+    public int getQuantity() {
+        return quantity;
     }
 
     public Date getOrderTime() {
@@ -47,6 +43,10 @@ public class Order {
 
     public int getEmployeeId() {
         return employeeId;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public String getProductReview() {

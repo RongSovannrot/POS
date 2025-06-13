@@ -6,15 +6,7 @@ public class Staff {
     private String phoneNumber;
     private double salary;
     private String address;
-    private String idNumber;
-
-    //cons
-    public Staff(String staffName, String staffId, String role, String idNumber) {
-        this.staffName = staffName;
-        this.staffId = staffId;
-        this.role = role;
-        this.idNumber = idNumber;
-    }
+    private String password;
 
     //cons for new em
     public Staff(String staffName, String staffId, String role, String shift, String phoneNumber, double salary, String address, String idNumber) {
@@ -26,6 +18,12 @@ public class Staff {
         this.salary = salary;
         this.address = address;
         this.idNumber = idNumber;
+    }
+
+    //cons for login
+    public Staff(String phoneNumber, String password){
+        this.phoneNumber = phoneNumber;
+        this.passowrd = password;
     }
 
     public String getStaffName() {

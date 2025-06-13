@@ -1,31 +1,29 @@
+import java.sql.Date;
+
 public class Customer {
-    private String userName;
-    private char gender; // M or F
+    private String name;
     private String phoneNumber;
     private String address;
-    private String registerDate;
-    private String dob;
+    private Date registerDate;
+    private int totalBuy;
+    private Date dob;
     private int loyaltyPoints;
     private String password;
 
-    //cons
-    public Customer(String userName, char gender, String phoneNumber, String address, String registerDate, String dob, String password) {
-        this.userName = userName;
-        this.gender = gender;
+    //cons for register
+    public Customer(String name, String phoneNumber, String address, String password, Date dob) {
+        this.name = name;
         this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.registerDate = registerDate;
-        this.dob = dob;
         this.password = password;
+        this.address = address;
+        this.dob = dob;
+        this.registerDate = new Date(System.currentTimeMillis());
         this.loyaltyPoints = 0;
+        this.totalBuy = 0;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public char getGender() {
-        return gender;
+    public String getName() {
+        return name;
     }
 
     public String getPhoneNumber() {
@@ -36,11 +34,11 @@ public class Customer {
         return address;
     }
 
-    public String getRegisterDate() {
+    public Date getRegisterDate() {
         return registerDate;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
@@ -50,6 +48,10 @@ public class Customer {
 
     public String getPassword() {
         return password;
+    }
+
+    public int getTotalBuy() {
+        return totalBuy;
     }
 
     public void setAddress(String address) {
@@ -63,4 +65,9 @@ public class Customer {
     public void addPoints(int points) {
         this.loyaltyPoints += points;
     }
+
+    public void rewardPoints(double totalPurchase) {
+        int earnedPoints = (int) (totalPurchase / 10);
+        this.loyaltyPoints += earnedPoints;
+        this.totalBuy++;
 }
