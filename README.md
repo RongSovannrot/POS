@@ -107,3 +107,10 @@ For example:
 - To get a product's ID: `product.getProductId();`
 - To set a product's ID: `product.setProductId(101);`
 
+### Collection
+#### Why Use `ArrayList`?
+
+- Customers: small dataset, linear search by phone is sufficient, preserves, registration, order.
+- Products: limited catalog, frequent updates, easy display order maintenance.
+- Orders: chronological tracking, small daily volume, recent-order focus.
+- Staff: Very small size (5–20 people), simple search, rare updates.
