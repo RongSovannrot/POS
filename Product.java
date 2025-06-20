@@ -5,7 +5,7 @@ public class Product {
     private String category; //shirt, Pants, Dress
     private double price;
     private int quantity; 
-    private double promotionDiscount; //percentage (0-100)
+    private int loyaltyPointReward; //get loyaltypoint when buying this product
     private int productId;
     private char size; //L, M, S
     private boolean stock; //available, unavailable
@@ -14,27 +14,15 @@ public class Product {
     private int sellOutDuration; //sell out in x days
 
     //cons for new product
-    public Product(int productId, String p_name, String category, double price, char size, int stock, int quantity, double promotionDiscount) {
+    public Product(int productId, String p_name, String category, double price, char size, int stock, int quantity) {
         this.productId = productId;
         this.p_name = p_name;
         this.category = category;
         this.price = price;
         this.size = size;
-        this.promotionDiscount = promotionDiscount; 
         this.quantity = quantity; 
         this.stock = stock;
         this.importDate = new Date(); 
-    }
-
-    //cons for orders
-    public Product(String p_name, String category, double price, double promotionDiscount, char size, boolean stock) { 
-        this.p_name = p_name;
-        this.category = category;
-        this.price = price;
-        this.promotionDiscount = promotionDiscount;
-        this.size = size;
-        this.stock = stock;
-        this.importDate = new Date();
     }
 
     //cons for reporting product
@@ -84,16 +72,6 @@ public class Product {
     public void setQuantity(int quantity) {
         if (quantity >= 0) {
             this.quantity = quantity;
-        }
-    }
-
-    public double getPromotionDiscount() {
-        return promotionDiscount;
-    }
-
-    public void setPromotionDiscount(double promotionDiscount) {
-        if (promotionDiscount >= 0 && promotionDiscount <= 100) {
-            this.promotionDiscount = promotionDiscount;
         }
     }
 
@@ -150,4 +128,14 @@ public class Product {
             }
         }
     }
+
+    public int getLoyaltyPointReward() {
+        return loyaltyPointReward;
+    }
+
+    public void setLoyaltyPointReward(int loyaltyPointReward) {
+        if (loyaltyPointReward >= 0) {
+            this.loyaltyPointReward = loyaltyPointReward;
+        }
+}
 }
