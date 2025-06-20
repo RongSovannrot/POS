@@ -1,4 +1,5 @@
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Customer {
     private String name;
@@ -65,9 +66,31 @@ public class Customer {
     public void addPoints(int points) {
         this.loyaltyPoints += points;
     }
+    public void rewardPoints(Product product, double totalPurchase) {
+        int totalPoints = 0;
 
-    public void rewardPoints(double totalPurchase) {
-        int earnedPoints = (int) (totalPurchase / 10);
-        this.loyaltyPoints += earnedPoints;
+        //points from product reward
+        totalPoints += product.getLoyaltyPointReward();
+
+        //points from customer’s birthday
+        if (isBirthdayToday()) {
+            totalPoints += 20;
+        }
+
+        //points from every 10 purchases
         this.totalBuy++;
+        if (this.totalBuy % 10 == 0) {
+            totalPoints += 10;
+        }
+
+        //add total points
+        this.loyaltyPoints += totalPoints;
+    }
+
+    private boolean isBirthdayToday() {
+        LocalDate today = LocalDate.now();
+        LocalDate birthDate = dob.toLocalDate();
+        return today.getDayOfMonth() == birthDate.getDayOfMonth() && today.getMonthValue() == birthDate.getMonthValue();
+    }
+
 }
