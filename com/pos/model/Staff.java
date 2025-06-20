@@ -1,13 +1,15 @@
 package com.pos.model;
+
 public class Staff {
     private String staffName;
     private String staffId;
+    private String idNumber; //national id card 
     private String role; //cashier, manager
     private String shift;
     private String phoneNumber;
     private double salary;
     private String address;
-    private String password;
+    private static int totalStaff = 0;
 
     //cons for new em
     public Staff(String staffName, String staffId, String role, String shift, String phoneNumber, double salary, String address, String idNumber) {
@@ -19,12 +21,11 @@ public class Staff {
         this.salary = salary;
         this.address = address;
         this.idNumber = idNumber;
+        totalStaff++;
     }
 
-    //cons for login
-    public Staff(String phoneNumber, String password){
-        this.phoneNumber = phoneNumber;
-        this.passowrd = password;
+    public static int getTotalStaff() {
+        return totalStaff;
     }
 
     public String getStaffName() {

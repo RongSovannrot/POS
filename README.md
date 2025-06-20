@@ -89,7 +89,6 @@ Represents a staff member working at the shop.
 Staff(String staffName, String staffId, String role, String shift, String phoneNumber, double salary, String address, String idNumber)
 ```
 
-
 ### Public & Private
 In our system, we set all attributes in each class to `private`.  
 The purpose is to protect the data, so that other classes cannot access or change the values directly.
@@ -106,6 +105,14 @@ Other classes can use these methods to safely access or update values with contr
 For example:
 - To get a product's ID: `product.getProductId();`
 - To set a product's ID: `product.setProductId(101);`
+
+### Static
+- Static fields hold data shared by all objects of a class rather than data specific to a single instance.
+For example, fields like totalCustomers, totalOrders, and totalStaff keep track of the total number of objects created for each class.
+These counters help the system quickly retrieve overall counts without querying a database or managing external data structures. We declare these static counters as private to protect the data from unauthorized or accidental modification from outside the class.
+
+- To allow other parts of the system (such as dashboards, reports, or administrative modules) to safely access these counts, we provide public static getter methods.These methods expose the current value in a read-only manner, without allowing external code to alter the counters.
+Since the counters are class-level data, static methods allow access without requiring an instance of the class.
 
 ### Collection
 #### Why Use `ArrayList`?
