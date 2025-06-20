@@ -12,6 +12,7 @@ public class Customer {
     private Date dob;
     private int loyaltyPoints;
     private String password;
+    private static int customerCount = 0;
 
     //cons for register
     public Customer(String name, String phoneNumber, String address, String password, Date dob) {
@@ -23,6 +24,11 @@ public class Customer {
         this.registerDate = new Date(System.currentTimeMillis());
         this.loyaltyPoints = 0;
         this.totalBuy = 0;
+        customerCount++;
+    }
+    
+    public static int getCustomerCount() {
+        return customerCount;
     }
 
     public String getName() {

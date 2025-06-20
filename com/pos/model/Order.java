@@ -1,8 +1,6 @@
 package com.pos.model;
 import java.util.Date;
 
-import Product;
-
 public class Order {
     private int orderId;
     private Customer customer;
@@ -12,6 +10,7 @@ public class Order {
     private Date orderTime;
     private int productReview; //rate from 1 to 5
     private int employeeId;
+    private static int totalOrders = 0;
 
     //cons for ordering
     public Order(int orderId, Customer customer, Product product, int quantity, String status, int employeeId) {
@@ -22,6 +21,11 @@ public class Order {
         this.status = status;
         this.orderTime = new Date();
         this.employeeId = employeeId;
+        totalOrders++;
+    }
+    
+    public static int getTotalOrders() {
+        return totalOrders;
     }
 
     public int getOrderId() {
