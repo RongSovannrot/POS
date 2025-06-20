@@ -1,3 +1,4 @@
+package com.pos.model;
 import java.util.Date;
 
 public class Product {

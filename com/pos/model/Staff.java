@@ -1,3 +1,4 @@
+package com.pos.model;
 public class Staff {
     private String staffName;
     private String staffId;

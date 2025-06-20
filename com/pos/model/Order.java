@@ -1,4 +1,7 @@
+package com.pos.model;
 import java.util.Date;
+
+import Product;
 
 public class Order {
     private int orderId;

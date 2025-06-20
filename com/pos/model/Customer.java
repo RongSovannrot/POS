@@ -1,3 +1,5 @@
+package com.pos.model;
+
 import java.sql.Date;
 import java.time.LocalDate;
 
